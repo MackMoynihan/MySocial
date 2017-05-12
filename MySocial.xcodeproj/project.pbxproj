@@ -26,6 +26,9 @@
 		DD184C881EC654A500FA93BF /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD184C7C1EC654A500FA93BF /* Roboto-Thin.ttf */; };
 		DD184C891EC654A500FA93BF /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD184C7D1EC654A500FA93BF /* Roboto-ThinItalic.ttf */; };
 		DD184C8D1EC661BC00FA93BF /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C8C1EC661BC00FA93BF /* RoundButton.swift */; };
+		DD184C8F1EC675A100FA93BF /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C8E1EC675A100FA93BF /* ShadowView.swift */; };
+		DD184C921EC675FC00FA93BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C911EC675FC00FA93BF /* Constants.swift */; };
+		DD184C941EC67BE500FA93BF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C931EC67BE500FA93BF /* CustomTextField.swift */; };
 		F4E929C6EB370BA0630DC3F9 /* Pods_MySocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B724FE79C08890155F3B13 /* Pods_MySocial.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		DD184C7C1EC654A500FA93BF /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		DD184C7D1EC654A500FA93BF /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		DD184C8C1EC661BC00FA93BF /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundButton.swift; path = ../RoundButton.swift; sourceTree = "<group>"; };
+		DD184C8E1EC675A100FA93BF /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		DD184C911EC675FC00FA93BF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DD184C931EC67BE500FA93BF /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		DD184C3E1EC6433D00FA93BF /* MySocial */ = {
 			isa = PBXGroup;
 			children = (
+				DD184C901EC675F100FA93BF /* Util */,
 				DD184C711EC6546A00FA93BF /* Resources */,
 				DD184C531EC646D300FA93BF /* Model */,
 				DD184C541EC646D700FA93BF /* View */,
@@ -131,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				DD184C8C1EC661BC00FA93BF /* RoundButton.swift */,
+				DD184C8E1EC675A100FA93BF /* ShadowView.swift */,
+				DD184C931EC67BE500FA93BF /* CustomTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -160,6 +169,14 @@
 				DD184C7D1EC654A500FA93BF /* Roboto-ThinItalic.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		DD184C901EC675F100FA93BF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				DD184C911EC675FC00FA93BF /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +316,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD184C921EC675FC00FA93BF /* Constants.swift in Sources */,
+				DD184C8F1EC675A100FA93BF /* ShadowView.swift in Sources */,
+				DD184C941EC67BE500FA93BF /* CustomTextField.swift in Sources */,
 				DD184C8D1EC661BC00FA93BF /* RoundButton.swift in Sources */,
 				DD184C421EC6433D00FA93BF /* SignInVC.swift in Sources */,
 				DD184C401EC6433D00FA93BF /* AppDelegate.swift in Sources */,

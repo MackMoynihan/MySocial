@@ -1,5 +1,5 @@
 //
-//  RoundButton.swift
+//  ShadowView.swift
 //  MySocial
 //
 //  Created by Mack Moynihan on 5/12/17.
@@ -8,13 +8,8 @@
 
 import UIKit
 @IBDesignable
-class RoundButton: UIButton {
+class ShadowView: UIView {
 
-    @IBInspectable var cornerRadius: CGFloat = 30.0 {
-        didSet{
-            setUpView()
-        }
-    }
     @IBInspectable var shadowOpacity: Float = 0.8 {
         didSet{
             setUpView()
@@ -31,16 +26,21 @@ class RoundButton: UIButton {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setUpView()
+        
+    }
+    
     override func prepareForInterfaceBuilder() {
         setUpView()
     }
     
-    func setUpView() {
-        layer.cornerRadius = cornerRadius
+    func setUpView(){
         layer.shadowColor = UIColor(red: SHADOW_GRAY, green: SHADOW_GRAY, blue: SHADOW_GRAY, alpha: shadowAlpha).cgColor
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = shadowRadius
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
     }
-    
+
 }
