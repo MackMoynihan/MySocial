@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign InVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="MySocial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpe-MR-EQZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.74901960784313726" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9xf-d3-tAB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXn-yv-41d">
+                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before an account will be created for you automatically." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9R5-XZ-AHg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.002658101963" green="0.74874854089999998" blue="0.60216104979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9R5-XZ-AHg" firstAttribute="top" secondItem="PXn-yv-41d" secondAttribute="top" id="Mrz-1P-cSx"/>
+                                    <constraint firstAttribute="height" constant="64" id="XIQ-Rl-FnF"/>
+                                    <constraint firstItem="9R5-XZ-AHg" firstAttribute="leading" secondItem="PXn-yv-41d" secondAttribute="leading" id="ZHW-Xt-Ax2"/>
+                                    <constraint firstAttribute="bottom" secondItem="9R5-XZ-AHg" secondAttribute="bottom" id="b3U-TR-3gx"/>
+                                    <constraint firstAttribute="trailing" secondItem="9R5-XZ-AHg" secondAttribute="trailing" id="kmm-Jl-ZCy"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Sign In Method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjp-6F-Ogz">
+                                <rect key="frame" x="16" y="156" width="343" height="26"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbT-tK-Flx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="0.53725490196078429" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ig7-Yb-Wmp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dpe-MR-EQZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5YP-fO-qoc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PXn-yv-41d" secondAttribute="bottom" id="E9c-Gs-vCt"/>
+                            <constraint firstItem="Gjp-6F-Ogz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="POt-LV-O0M"/>
+                            <constraint firstItem="PXn-yv-41d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SsL-Xe-8jc"/>
+                            <constraint firstItem="Gjp-6F-Ogz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VsW-j7-PyF"/>
+                            <constraint firstAttribute="trailing" secondItem="PXn-yv-41d" secondAttribute="trailing" id="Y3b-vo-pfU"/>
+                            <constraint firstItem="Gjp-6F-Ogz" firstAttribute="top" secondItem="dpe-MR-EQZ" secondAttribute="bottom" constant="8" id="icO-9c-xJQ"/>
+                            <constraint firstAttribute="trailing" secondItem="dpe-MR-EQZ" secondAttribute="trailing" id="oxF-Wr-Zw7"/>
+                            <constraint firstItem="dpe-MR-EQZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wBS-2u-Xov"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="43.628185907046479"/>
+        </scene>
+    </scenes>
+</document>

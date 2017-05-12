@@ -10,16 +10,59 @@ import UIKit
 
 class SignInVC: UIViewController {
 
+    @IBOutlet weak var emailButton: RoundButton!
+    
+    @IBOutlet weak var facebookButton: RoundButton!
+    
+    @IBOutlet weak var emailAddressField: UITextField!
+    
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var signInButton: RoundButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        emailAddressField.isHidden = true
+        passwordField.isHidden = true
+        signInButton.isHidden = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func emailPressed(_ sender: Any) {
+        
+        toggleSignIn()
+        
     }
-
+    
+    @IBAction func facebookPressed(_ sender: Any) {
+        
+        
+        
+    }
+    
+    @IBAction func signInPressed(_ sender: Any) {
+        
+        
+        
+    }
+    
+    func toggleSignIn() {
+        if (emailButton.titleLabel?.text == "Email") {
+            emailAddressField.isHidden = false
+            passwordField.isHidden = false
+            signInButton.isHidden = false
+            emailButton.setTitle("X", for: .normal)
+            
+            
+        } else {
+            emailAddressField.isHidden = true
+            passwordField.isHidden = true
+            signInButton.isHidden = true
+            emailButton.setTitle("Email", for: .normal)
+            
+        }
+    }
+    
 
 }
 
