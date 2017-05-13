@@ -56,5 +56,27 @@
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb834622936686304</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>834622936686304</string>
+    <key>FacebookDisplayName</key>
+    <string>MySocial</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>MySocial needs it to be cool.</string>
 </dict>
 </plist>

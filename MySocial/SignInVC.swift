@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
+import Firebase
 
 class SignInVC: UIViewController {
 
@@ -23,21 +26,43 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailAddressField.isHidden = true
-        passwordField.isHidden = true
-        signInButton.isHidden = true
+//        emailAddressField.isHidden = true
+//        passwordField.isHidden = true
+//        signInButton.isHidden = true
     }
 
     @IBAction func emailPressed(_ sender: Any) {
         
-        toggleSignIn()
+        //toggleSignIn()
         
     }
     
     @IBAction func facebookPressed(_ sender: Any) {
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error != nil {
+                print("Unable to authenticate with Facebook - \(String(describing: error))")
+            } else if result?.isCancelled == true {
+                print("User cancelled Facebook authentication - \(String(describing: error))")
+            } else {
+                print("Successfully authenticated with Facebook")
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.firebaseAuth(credential)
+            }
+            
+        }
         
         
-        
+    }
+    
+    func firebaseAuth (_ credential: FIRAuthCredential){
+        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            if error != nil {
+                print("Unable to authenticate with Firebase - \(String(describing: error))")
+            } else {
+                print("Successfully authenticated with Firebase")
+            }
+        })
     }
     
     @IBAction func signInPressed(_ sender: Any) {
@@ -47,20 +72,20 @@ class SignInVC: UIViewController {
     }
     
     func toggleSignIn() {
-        if (emailButton.titleLabel?.text == "Email") {
-            emailAddressField.isHidden = false
-            passwordField.isHidden = false
-            signInButton.isHidden = false
-            emailButton.setTitle("X", for: .normal)
-            
-            
-        } else {
-            emailAddressField.isHidden = true
-            passwordField.isHidden = true
-            signInButton.isHidden = true
-            emailButton.setTitle("Email", for: .normal)
-            
-        }
+//        if (emailButton.titleLabel?.text == "Email") {
+//            emailAddressField.isHidden = false
+//            passwordField.isHidden = false
+//            signInButton.isHidden = false
+//            emailButton.setTitle("X", for: .normal)
+//            
+//            
+//        } else {
+//            emailAddressField.isHidden = true
+//            passwordField.isHidden = true
+//            signInButton.isHidden = true
+//            emailButton.setTitle("Email", for: .normal)
+//            
+//        }
     }
     
 
