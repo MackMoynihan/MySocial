@@ -11,8 +11,14 @@ import Firebase
 import SwiftKeychainWrapper
 
 
-class SocialVC: UIViewController {
+class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var messageTextField: CustomTextField!
 
+    @IBOutlet weak var imageView: CustomImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +35,10 @@ class SocialVC: UIViewController {
         print("MACK: Successfully signed out of keychain : \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
         self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func createPost(_ sender: Any) {
         
     }
     
