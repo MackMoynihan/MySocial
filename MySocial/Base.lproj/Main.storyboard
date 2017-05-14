@@ -14,6 +14,9 @@
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -228,11 +231,68 @@
                         <outlet property="facebookButton" destination="oio-Z9-oxA" id="Byh-l5-oFU"/>
                         <outlet property="passwordField" destination="uKN-18-ae4" id="GS4-Fl-C1R"/>
                         <outlet property="signInButton" destination="0ds-sb-KgF" id="b5l-xe-wE4"/>
+                        <segue destination="iwX-al-LIX" kind="showDetail" identifier="goToFeed" id="sYl-WY-FNn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85.599999999999994" y="43.628185907046479"/>
+        </scene>
+        <!--SocialVC-->
+        <scene sceneID="m7e-kW-4bl">
+            <objects>
+                <viewController id="iwX-al-LIX" customClass="SocialVC" customModule="MySocial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9fC-61-5IW"/>
+                        <viewControllerLayoutGuide type="bottom" id="dpK-6w-Z23"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jD1-DK-9fp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1NH-rJ-b5J">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="0.53558796639999995" blue="0.45878654720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="JcW-gR-hKV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vY6-oE-TrF">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwU-4E-rxB">
+                                        <rect key="frame" x="154" y="308" width="67" height="30"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                                        <state key="normal" title="Sign Out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signOut:" destination="iwX-al-LIX" eventType="touchUpInside" id="diC-Lc-1yK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.002658101963" green="0.74874854089999998" blue="0.60216104979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="WwU-4E-rxB" firstAttribute="centerX" secondItem="vY6-oE-TrF" secondAttribute="centerX" id="cqi-Go-QD6"/>
+                                    <constraint firstItem="WwU-4E-rxB" firstAttribute="centerY" secondItem="vY6-oE-TrF" secondAttribute="centerY" id="eeG-VH-era"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1NH-rJ-b5J" firstAttribute="top" secondItem="jD1-DK-9fp" secondAttribute="top" id="If4-bA-ZSu"/>
+                            <constraint firstItem="vY6-oE-TrF" firstAttribute="top" secondItem="9fC-61-5IW" secondAttribute="bottom" id="Ilf-Pg-jCT"/>
+                            <constraint firstAttribute="trailing" secondItem="1NH-rJ-b5J" secondAttribute="trailing" id="K9H-bj-sW7"/>
+                            <constraint firstItem="dpK-6w-Z23" firstAttribute="top" secondItem="vY6-oE-TrF" secondAttribute="bottom" id="Ksz-tp-Su3"/>
+                            <constraint firstItem="vY6-oE-TrF" firstAttribute="leading" secondItem="jD1-DK-9fp" secondAttribute="leading" id="Nvf-z9-thi"/>
+                            <constraint firstAttribute="trailing" secondItem="vY6-oE-TrF" secondAttribute="trailing" id="YZP-07-tE2"/>
+                            <constraint firstItem="1NH-rJ-b5J" firstAttribute="leading" secondItem="jD1-DK-9fp" secondAttribute="leading" id="qMc-ml-7yk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fs-Lv-CMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949.60000000000002" y="40.929535232383813"/>
         </scene>
     </scenes>
     <resources>

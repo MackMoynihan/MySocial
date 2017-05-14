@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
 
@@ -26,9 +27,13 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        emailAddressField.isHidden = true
-//        passwordField.isHidden = true
-//        signInButton.isHidden = true
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
     }
 
     @IBAction func emailPressed(_ sender: Any) {
@@ -61,6 +66,10 @@ class SignInVC: UIViewController {
                 print("Unable to authenticate with Firebase - \(String(describing: error))")
             } else {
                 print("Successfully authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
+                
             }
         })
     }
@@ -70,12 +79,19 @@ class SignInVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("User authenticated email with firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                         if error == nil {
                             print("User account successfully created with firebase")
+                            if let user = user {
+                                self.completeSignIn(id: user.uid)
+                            }
                         } else {
                             print("Account creation failed")
+                            
                         }
                     })
                 }
@@ -85,22 +101,12 @@ class SignInVC: UIViewController {
         
     }
     
-    func toggleSignIn() {
-//        if (emailButton.titleLabel?.text == "Email") {
-//            emailAddressField.isHidden = false
-//            passwordField.isHidden = false
-//            signInButton.isHidden = false
-//            emailButton.setTitle("X", for: .normal)
-//            
-//            
-//        } else {
-//            emailAddressField.isHidden = true
-//            passwordField.isHidden = true
-//            signInButton.isHidden = true
-//            emailButton.setTitle("Email", for: .normal)
-//            
-//        }
+    func completeSignIn(id: String) {
+        let saveSuccessful: Bool = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Data successfully saved to the keychain : \(saveSuccessful)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
     }
+    
     
 
 }

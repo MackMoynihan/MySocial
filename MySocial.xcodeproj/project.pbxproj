@@ -29,6 +29,7 @@
 		DD184C8F1EC675A100FA93BF /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C8E1EC675A100FA93BF /* ShadowView.swift */; };
 		DD184C921EC675FC00FA93BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C911EC675FC00FA93BF /* Constants.swift */; };
 		DD184C941EC67BE500FA93BF /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C931EC67BE500FA93BF /* CustomTextField.swift */; };
+		DD184C961EC7C85B00FA93BF /* SocialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C951EC7C85B00FA93BF /* SocialVC.swift */; };
 		F4E929C6EB370BA0630DC3F9 /* Pods_MySocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B724FE79C08890155F3B13 /* Pods_MySocial.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		DD184C8E1EC675A100FA93BF /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		DD184C911EC675FC00FA93BF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD184C931EC67BE500FA93BF /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DD184C951EC7C85B00FA93BF /* SocialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				DD184C411EC6433D00FA93BF /* SignInVC.swift */,
+				DD184C951EC7C85B00FA93BF /* SocialVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD184C921EC675FC00FA93BF /* Constants.swift in Sources */,
+				DD184C961EC7C85B00FA93BF /* SocialVC.swift in Sources */,
 				DD184C8F1EC675A100FA93BF /* ShadowView.swift in Sources */,
 				DD184C941EC67BE500FA93BF /* CustomTextField.swift in Sources */,
 				DD184C8D1EC661BC00FA93BF /* RoundButton.swift in Sources */,
