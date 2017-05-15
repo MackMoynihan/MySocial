@@ -395,9 +395,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3s-CO-foG" customClass="ShadowView" customModule="MySocial" customModuleProvider="target">
                                         <rect key="frame" x="16" y="73" width="343" height="80"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="yEQ-ea-q4E" customClass="CustomImageView" customModule="MySocial" customModuleProvider="target">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="yEQ-ea-q4E" customClass="CustomImageView" customModule="MySocial" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="10" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.002658101963" green="0.74874854089999998" blue="0.60216104979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="yEQ-ea-q4E" secondAttribute="height" multiplier="1:1" id="O9L-iJ-qla"/>
                                                 </constraints>
@@ -409,6 +410,9 @@
                                                         <real key="value" value="4"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="9D0-CQ-fuw" appends="YES" id="raV-h3-VE1"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Post message" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-JF-iMg" customClass="CustomTextField" customModule="MySocial" customModuleProvider="target">
                                                 <rect key="frame" x="76" y="25" width="191" height="30"/>
@@ -484,7 +488,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWy-Sr-S8x">
-                                                <rect key="frame" x="151.5" y="17.5" width="57" height="30.5"/>
+                                                <rect key="frame" x="151" y="17.5" width="57" height="30.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="26"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -545,6 +549,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fs-Lv-CMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9D0-CQ-fuw">
+                    <connections>
+                        <action selector="imagePickerPressed:" destination="iwX-al-LIX" id="w0p-Uu-ZWC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="901.60000000000002" y="43.628185907046479"/>
         </scene>

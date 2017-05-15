@@ -26,7 +26,7 @@ class CustomImageView: UIImageView {
         layer.shadowOpacity = 1.0
         layer.shadowColor = UIColor(red: SHADOW_GRAY, green: SHADOW_GRAY, blue: SHADOW_GRAY, alpha: 1.0).cgColor
         layer.shadowOffset = CGSize(width: 1, height: 1)
-        
+        layer.masksToBounds = true
     }
     
     override func prepareForInterfaceBuilder() {
