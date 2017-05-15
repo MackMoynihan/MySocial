@@ -264,7 +264,7 @@
                                         <rect key="frame" x="0.0" y="169" width="375" height="478"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="373" id="Kq8-vB-hf0" customClass="FeedCell" customModule="MySocial" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="373" id="Kq8-vB-hf0" customClass="FeedCell" customModule="MySocial" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="373"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kq8-vB-hf0" id="Yji-gZ-Qhf">
@@ -274,7 +274,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iv-jO-0rm" customClass="ShadowView" customModule="MySocial" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="8" width="375" height="356.5"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iIa-cc-p2x">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iIa-cc-p2x">
                                                                     <rect key="frame" x="8" y="8" width="359" height="340.5"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-w2-tLw">
@@ -322,6 +322,9 @@
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4mA-TC-VYc">
                                                                             <rect key="frame" x="0.0" y="230" width="359" height="70.5"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="70.5" id="b0B-cQ-jwX"/>
+                                                                            </constraints>
                                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -411,6 +414,7 @@
                                                 <rect key="frame" x="76" y="25" width="191" height="30"/>
                                                 <color key="backgroundColor" red="0.80052734380000001" green="0.80052734380000001" blue="0.80052734380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQz-1a-InT" customClass="RoundButton" customModule="MySocial" customModuleProvider="target">
@@ -480,7 +484,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWy-Sr-S8x">
-                                                <rect key="frame" x="151" y="17.5" width="57" height="30.5"/>
+                                                <rect key="frame" x="151.5" y="17.5" width="57" height="30.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="26"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -534,21 +538,10 @@
                             <constraint firstItem="1NH-rJ-b5J" firstAttribute="leading" secondItem="jD1-DK-9fp" secondAttribute="leading" id="qMc-ml-7yk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9hU-ef-AWH">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="HDq-8b-aL6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WwU-4E-rxB">
-                                <rect key="frame" x="16" y="7" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
-                                <state key="normal" title="Sign Out">
-                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.86723993288590606" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="yEQ-ea-q4E" id="c9m-5y-aqw"/>
                         <outlet property="messageTextField" destination="XKx-JF-iMg" id="U1K-nn-bzv"/>
+                        <outlet property="tableView" destination="bz8-SZ-phf" id="w7A-fw-21F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fs-Lv-CMK" userLabel="First Responder" sceneMemberID="firstResponder"/>

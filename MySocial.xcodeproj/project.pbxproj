@@ -32,6 +32,7 @@
 		DD184C961EC7C85B00FA93BF /* SocialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C951EC7C85B00FA93BF /* SocialVC.swift */; };
 		DD184C981EC89EDE00FA93BF /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C971EC89EDE00FA93BF /* CustomImageView.swift */; };
 		DD184C9A1EC8A83E00FA93BF /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C991EC8A83E00FA93BF /* FeedCell.swift */; };
+		DD184C9D1EC941E300FA93BF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C9C1EC941E300FA93BF /* DataService.swift */; };
 		F4E929C6EB370BA0630DC3F9 /* Pods_MySocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B724FE79C08890155F3B13 /* Pods_MySocial.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		DD184C951EC7C85B00FA93BF /* SocialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialVC.swift; sourceTree = "<group>"; };
 		DD184C971EC89EDE00FA93BF /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		DD184C991EC8A83E00FA93BF /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		DD184C9C1EC941E300FA93BF /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		DD184C3E1EC6433D00FA93BF /* MySocial */ = {
 			isa = PBXGroup;
 			children = (
+				DD184C9B1EC941D300FA93BF /* Services */,
 				DD184C901EC675F100FA93BF /* Util */,
 				DD184C711EC6546A00FA93BF /* Resources */,
 				DD184C531EC646D300FA93BF /* Model */,
@@ -129,7 +132,6 @@
 				DD184C481EC6433D00FA93BF /* LaunchScreen.storyboard */,
 				DD184C4B1EC6433D00FA93BF /* Info.plist */,
 				DD184C511EC6438100FA93BF /* GoogleService-Info.plist */,
-				DD184C991EC8A83E00FA93BF /* FeedCell.swift */,
 			);
 			path = MySocial;
 			sourceTree = "<group>";
@@ -137,6 +139,7 @@
 		DD184C531EC646D300FA93BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD184C991EC8A83E00FA93BF /* FeedCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -186,6 +189,14 @@
 				DD184C911EC675FC00FA93BF /* Constants.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		DD184C9B1EC941D300FA93BF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DD184C9C1EC941E300FA93BF /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 				DD184C421EC6433D00FA93BF /* SignInVC.swift in Sources */,
 				DD184C401EC6433D00FA93BF /* AppDelegate.swift in Sources */,
 				DD184C9A1EC8A83E00FA93BF /* FeedCell.swift in Sources */,
+				DD184C9D1EC941E300FA93BF /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

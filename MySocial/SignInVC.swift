@@ -67,7 +67,8 @@ class SignInVC: UIViewController {
             } else {
                 print("Successfully authenticated with Firebase")
                 if let user = user {
-                    self.completeSignIn(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(uid: user.uid, userData: userData)
                 }
                 
             }
@@ -80,14 +81,17 @@ class SignInVC: UIViewController {
                 if error == nil {
                     print("User authenticated email with firebase")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        
+                        self.completeSignIn(uid: user.uid, userData: userData)
                     }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                         if error == nil {
                             print("User account successfully created with firebase")
                             if let user = user {
-                                self.completeSignIn(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(uid: user.uid, userData: userData)
                             }
                         } else {
                             print("Account creation failed")
@@ -101,8 +105,10 @@ class SignInVC: UIViewController {
         
     }
     
-    func completeSignIn(id: String) {
-        let saveSuccessful: Bool = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+    func completeSignIn(uid: String, userData: Dictionary<String, String>) {
+        
+        DataService.ds.createFirebaseDBUser(uid: uid, userData: userData)
+        let saveSuccessful: Bool = KeychainWrapper.standard.set(uid, forKey: KEY_UID)
         print("Data successfully saved to the keychain : \(saveSuccessful)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
