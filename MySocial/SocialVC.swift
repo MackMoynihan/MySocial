@@ -23,6 +23,8 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     var imagePicker: UIImagePickerController!
     
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -84,8 +86,18 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let post = posts[indexPath.row]
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell {
-            cell.configureCell(post: posts[indexPath.row])
+            if let img = SocialVC.imageCache.object(forKey: post.imageURL as NSString) {
+                cell.configureCell(post: post, img: img)
+                return cell
+            } else {
+                print("Failed to retrieve image from cache")
+                cell.configureCell(post: post)
+            }
+            
             return cell
         }
         return FeedCell()

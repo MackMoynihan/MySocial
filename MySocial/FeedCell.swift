@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseStorage
 class FeedCell: UITableViewCell {
 
     @IBOutlet weak var profilePic: CustomImageView!
@@ -31,10 +31,33 @@ class FeedCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(post: Post){
+    func configureCell(post: Post, img: UIImage? = nil){
         self.post = post
         self.textView.text = post.caption
         self.likeCount.text = "\(post.likes)"
+        
+        if img != nil {
+            self.img.image = img
+        } else {
+            
+            let ref = FIRStorage.storage().reference(forURL: post.imageURL)
+            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                if error != nil {
+                    print("Unable to download image from Firebase Storage")
+                } else {
+                    print("Successfully downloaded image from Firebase storage")
+                    if let imgData = data {
+                        if let img = UIImage(data: imgData){
+                            self.img.image = img
+                            SocialVC.imageCache.setObject(img, forKey: post.imageURL as NSString)
+                        }
+                    }
+                }
+            })
+                
+                
+            
+        }
         
     }
 
