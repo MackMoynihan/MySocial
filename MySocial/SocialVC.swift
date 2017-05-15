@@ -19,16 +19,26 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var imageView: CustomImageView!
     
-    //var posts: [Post]
+    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
-        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
-            print(snapshot.value)
-        }
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshot {
+                    print("SNAP : \(snap)")
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let post = Post(postKey: key, postData: postDict)
+                        self.posts.append(post)
+                    }
+                }
+            }
+            tableView.reloadData()
+        })
         
         
         
@@ -57,10 +67,10 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell {
+//        if let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell {
 //            
 //        }
         return tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
