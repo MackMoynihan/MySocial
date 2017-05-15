@@ -37,7 +37,7 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
-            tableView.reloadData()
+            self.tableView.reloadData()
         })
         
         
@@ -70,10 +70,11 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return posts.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell {
-//            
-//        }
-        return tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell {
+            cell.configureCell(post: posts[indexPath.row])
+            return cell
+        }
+        return FeedCell()
     }
     
     
