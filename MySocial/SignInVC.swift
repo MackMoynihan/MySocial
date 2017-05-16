@@ -12,7 +12,7 @@ import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailButton: RoundButton!
     
@@ -27,6 +27,11 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailAddressField.delegate = self
+        passwordField.delegate = self
+        let keyboardRecognizer = UITapGestureRecognizer(target: self, action: #selector(textFieldShouldReturn))
+        self.view.addGestureRecognizer(keyboardRecognizer)
+        keyboardRecognizer.cancelsTouchesInView = false
         
     }
     
@@ -112,7 +117,10 @@ class SignInVC: UIViewController {
         print("Data successfully saved to the keychain : \(saveSuccessful)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
     
 
 }

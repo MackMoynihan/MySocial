@@ -264,7 +264,7 @@
                                         <rect key="frame" x="0.0" y="169" width="375" height="478"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="373" id="Kq8-vB-hf0" customClass="FeedCell" customModule="MySocial" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="373" id="Kq8-vB-hf0" customClass="FeedCell" customModule="MySocial" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="373"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kq8-vB-hf0" id="Yji-gZ-Qhf">
@@ -303,10 +303,14 @@
                                                                                 </label>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-UJ-qEJ">
                                                                                     <rect key="frame" x="289" y="0.0" width="70" height="70"/>
+                                                                                    <gestureRecognizers/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="70" id="PUK-Pn-Imz"/>
                                                                                         <constraint firstAttribute="height" constant="70" id="d4A-qL-tXu"/>
                                                                                     </constraints>
+                                                                                    <connections>
+                                                                                        <outletCollection property="gestureRecognizers" destination="TXK-rD-ggC" appends="YES" id="ha9-GR-7Eg"/>
+                                                                                    </connections>
                                                                                 </imageView>
                                                                             </subviews>
                                                                             <constraints>
@@ -414,7 +418,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="9D0-CQ-fuw" appends="YES" id="raV-h3-VE1"/>
                                                 </connections>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Post message" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-JF-iMg" customClass="CustomTextField" customModule="MySocial" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Post message" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-JF-iMg" customClass="CustomTextField" customModule="MySocial" customModuleProvider="target">
                                                 <rect key="frame" x="76" y="25" width="191" height="30"/>
                                                 <color key="backgroundColor" red="0.80052734380000001" green="0.80052734380000001" blue="0.80052734380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
@@ -488,7 +492,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWy-Sr-S8x">
-                                                <rect key="frame" x="151" y="17.5" width="57" height="30.5"/>
+                                                <rect key="frame" x="151.5" y="17.5" width="57" height="30.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="26"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -554,6 +558,7 @@
                         <action selector="imagePickerPressed:" destination="iwX-al-LIX" id="w0p-Uu-ZWC"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="TXK-rD-ggC"/>
             </objects>
             <point key="canvasLocation" x="901.60000000000002" y="43.628185907046479"/>
         </scene>

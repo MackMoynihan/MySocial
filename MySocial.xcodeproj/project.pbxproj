@@ -34,6 +34,7 @@
 		DD184C9A1EC8A83E00FA93BF /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C991EC8A83E00FA93BF /* FeedCell.swift */; };
 		DD184C9D1EC941E300FA93BF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C9C1EC941E300FA93BF /* DataService.swift */; };
 		DD184C9F1ECA146300FA93BF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184C9E1ECA146300FA93BF /* Post.swift */; };
+		DD184CA11ECA647400FA93BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD184CA01ECA647400FA93BF /* User.swift */; };
 		F4E929C6EB370BA0630DC3F9 /* Pods_MySocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B724FE79C08890155F3B13 /* Pods_MySocial.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		DD184C991EC8A83E00FA93BF /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		DD184C9C1EC941E300FA93BF /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DD184C9E1ECA146300FA93BF /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DD184CA01ECA647400FA93BF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		DD184C531EC646D300FA93BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD184CA01ECA647400FA93BF /* User.swift */,
 				DD184C991EC8A83E00FA93BF /* FeedCell.swift */,
 				DD184C9E1ECA146300FA93BF /* Post.swift */,
 			);
@@ -347,6 +350,7 @@
 				DD184C941EC67BE500FA93BF /* CustomTextField.swift in Sources */,
 				DD184C8D1EC661BC00FA93BF /* RoundButton.swift in Sources */,
 				DD184C421EC6433D00FA93BF /* SignInVC.swift in Sources */,
+				DD184CA11ECA647400FA93BF /* User.swift in Sources */,
 				DD184C401EC6433D00FA93BF /* AppDelegate.swift in Sources */,
 				DD184C9A1EC8A83E00FA93BF /* FeedCell.swift in Sources */,
 				DD184C9D1EC941E300FA93BF /* DataService.swift in Sources */,

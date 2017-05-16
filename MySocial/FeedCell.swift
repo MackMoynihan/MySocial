@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseDatabase
 class FeedCell: UITableViewCell {
 
     @IBOutlet weak var profilePic: CustomImageView!
@@ -20,9 +21,17 @@ class FeedCell: UITableViewCell {
     
     var post: Post!
     
+    var likesRef: FIRDatabaseReference!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1
+        tap.isEnabled = true
+        like.addGestureRecognizer(tap)
+        like.isUserInteractionEnabled = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,10 +40,28 @@ class FeedCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func likeTapped() {
+        likesRef.observeSingleEvent(of: .value, with: { (snap) in
+            if let _ = snap.value as? NSNull {
+                self.like.image = UIImage(named: "empty-heart")
+                self.post.adjustLikes(addLike: true)
+                self.likesRef.setValue(true)
+            } else {
+                self.like.image = UIImage(named: "filled-heart")
+                self.post.adjustLikes(addLike: false)
+                self.likesRef.removeValue()
+            }
+            
+        })
+    }
+    
     func configureCell(post: Post, img: UIImage? = nil){
         self.post = post
+         likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
         self.textView.text = post.caption
         self.likeCount.text = "\(post.likes)"
+        self.postLbl.text = post.user.username
+        //self.profilePic.image = UIImage(named: post)
         
         if img != nil {
             self.img.image = img
@@ -58,6 +85,15 @@ class FeedCell: UITableViewCell {
                 
             
         }
+        
+        
+        likesRef.observeSingleEvent(of: .value, with: { (snap) in
+            if let _ = snap.value as? NSNull {
+                self.like.image = UIImage(named: "empty-heart")
+            } else {
+                self.like.image = UIImage(named: "filled-heart")
+            }
+        })
         
     }
 
