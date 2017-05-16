@@ -54,6 +54,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                 print("Unable to authenticate with Facebook - \(String(describing: error))")
             } else if result?.isCancelled == true {
                 print("User cancelled Facebook authentication - \(String(describing: error))")
+                loginManager.logOut()
             } else {
                 print("Successfully authenticated with Facebook")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -121,6 +122,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
+    
     
 
 }

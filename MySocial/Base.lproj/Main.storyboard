@@ -278,13 +278,13 @@
                                                                     <rect key="frame" x="8" y="8" width="359" height="340.5"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Ya-w2-tLw">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="70"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="vtO-4c-iPb" customClass="CustomImageView" customModule="MySocial" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="vtO-4c-iPb" customClass="CustomImageView" customModule="MySocial" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                    <color key="backgroundColor" red="0.002658101963" green="0.74874854089999998" blue="0.60216104979999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="70" id="Jdq-pi-3wv"/>
-                                                                                        <constraint firstAttribute="height" constant="70" id="Q0g-9g-vmU"/>
+                                                                                        <constraint firstAttribute="width" secondItem="vtO-4c-iPb" secondAttribute="height" multiplier="1:1" id="c6l-QA-m0y"/>
                                                                                     </constraints>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -296,17 +296,16 @@
                                                                                     </userDefinedRuntimeAttributes>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajB-jo-UqI">
-                                                                                    <rect key="frame" x="70" y="25" width="219" height="20.5"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <rect key="frame" x="50" y="13" width="259" height="24.5"/>
+                                                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="21"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-UJ-qEJ">
-                                                                                    <rect key="frame" x="289" y="0.0" width="70" height="70"/>
+                                                                                    <rect key="frame" x="309" y="0.0" width="50" height="50"/>
                                                                                     <gestureRecognizers/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="70" id="PUK-Pn-Imz"/>
-                                                                                        <constraint firstAttribute="height" constant="70" id="d4A-qL-tXu"/>
+                                                                                        <constraint firstAttribute="width" secondItem="GyV-UJ-qEJ" secondAttribute="height" multiplier="1:1" id="90n-4H-G1a"/>
                                                                                     </constraints>
                                                                                     <connections>
                                                                                         <outletCollection property="gestureRecognizers" destination="TXK-rD-ggC" appends="YES" id="ha9-GR-7Eg"/>
@@ -314,13 +313,13 @@
                                                                                 </imageView>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="70" id="iOU-NR-9p4"/>
+                                                                                <constraint firstAttribute="height" constant="50" id="iOU-NR-9p4"/>
                                                                             </constraints>
                                                                         </stackView>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ZhH-WA-vuc">
-                                                                            <rect key="frame" x="0.0" y="80" width="359" height="140"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZhH-WA-vuc">
+                                                                            <rect key="frame" x="0.0" y="60" width="359" height="160"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="140" id="U4x-XM-Inw"/>
+                                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="U4x-XM-Inw"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4mA-TC-VYc">
@@ -492,7 +491,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWy-Sr-S8x">
-                                                <rect key="frame" x="151.5" y="17.5" width="57" height="30.5"/>
+                                                <rect key="frame" x="151" y="17.5" width="58.5" height="30.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="26"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -569,8 +568,6 @@
         <image name="devslopes-logo" width="150" height="94"/>
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
-        <image name="placeholder" width="567" height="312"/>
-        <image name="profile" width="113" height="155"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
 </document>

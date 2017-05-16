@@ -60,8 +60,28 @@ class FeedCell: UITableViewCell {
          likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
         self.textView.text = post.caption
         self.likeCount.text = "\(post.likes)"
-        self.postLbl.text = post.user.username
-        //self.profilePic.image = UIImage(named: post)
+        
+        self.postLbl.text = post.username
+        if post.userImgURL != nil {
+            let urlString = post.userImgURL!
+            guard let url = URL(string: urlString) else { return }
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    print("Failed fetching image:", error)
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    print("Not a proper HTTPURLResponse or statusCode")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.profilePic.image = UIImage(data: data!)
+                }
+            }.resume()
+        }
+        
         
         if img != nil {
             self.img.image = img

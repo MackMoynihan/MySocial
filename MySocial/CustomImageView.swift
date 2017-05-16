@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+
 @IBDesignable
 class CustomImageView: UIImageView {
     @IBInspectable var cornerRadius: CGFloat = 30 {
@@ -35,3 +37,4 @@ class CustomImageView: UIImageView {
     
 
 }
+

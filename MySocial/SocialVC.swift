@@ -11,6 +11,7 @@ import Firebase
 import SwiftKeychainWrapper
 import FacebookCore
 import FBSDKLoginKit
+import FBSDKCoreKit
 
 class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     typealias JSON = [String: Any]
@@ -27,6 +28,7 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     var imageSelected = false
     
     var currentUser: User?
+    var currentUserProfilePicture: UIImage?
     
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
@@ -58,7 +60,7 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             self.tableView.reloadData()
         })
         
-        var providerRef = DataService.ds.REF_USER_CURRENT
+        let providerRef = DataService.ds.REF_USER_CURRENT
         providerRef.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             if let provider = value?["provider"] as? String {
@@ -116,7 +118,8 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
         "caption": messageTextField.text! as AnyObject,
         "imageurl": imageURL as AnyObject,
         "likes": 0 as AnyObject,
-        "user": currentUser as AnyObject
+        "username": currentUser?.username as AnyObject,
+        "userImg": currentUser?.imageURL as AnyObject
         ]
         
         DataService.ds.REF_POSTS.childByAutoId().setValue(post)
@@ -206,7 +209,7 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
                     } else {
                         print("Could not find user id")
                     }
-                    currentUser = User(username: fbName, imageurl: fbImgURL, userid: fbUserID)
+                    //currentUser = User(username: fbName, imageurl: fbImgURL, userid: fbUserID)
                 }
                 print("MACK: ")
             }
@@ -229,9 +232,12 @@ class SocialVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
             case .success(let response):
                 print("Custom Graph Request Succeeded: \(response)")
                 print("My facebook id is \(response.fbUserID!)")
+                
                 print("My name is \(response.fbName!)")
                 print("My picture url is \(response.fbImgURL!)")
-                self.currentUser = response.currentUser
+                self.currentUser = User(username: response.fbName!, imageurl: response.fbImgURL!, userid: response.fbUserID!)
+                
+                
             case .failed(let error):
                 print("Custom Graph Request Failed: \(error)")
             }
